@@ -1,3 +1,4 @@
 # Basic-Calculator
 This program is for building a basic calculator that add, subtract, divide, and multiply numbers continuously. 
-![image](https://github.com/user-attachments/assets/b2e6a5b7-599e-4bb4-97ac-90da5fb22a56)
+
+![Screenshot (7)](https://github.com/user-attachments/assets/1fbefab7-fc7e-4fba-8955-d26c46773730)
