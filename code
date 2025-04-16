@@ -1,0 +1,71 @@
+print(""" _____________________
+|  _________________  |
+| |              0. | |
+| |_________________| |
+|  ___ ___ ___   ___  |
+| | 7 | 8 | 9 | | + | |
+| |___|___|___| |___| |
+| | 4 | 5 | 6 | | - | |
+| |___|___|___| |___| |
+| | 1 | 2 | 3 | | x | |
+| |___|___|___| |___| |
+| | . | 0 | = | | / | |
+| |___|___|___| |___| |
+|_____________________|""")
+
+def add(n1, n2):
+    return n1 + n2
+
+def sub(n1, n2):
+    return n1 - n2
+
+def times(n1, n2):
+    return n1 * n2
+
+def divide(n1, n2):
+    return n1 / n2
+
+def compute(first, second, math):
+    if math == "+":
+        answer = operations["+"](first, second)
+        return answer
+    elif math == "-":
+        answer = operations["-"](first, second)
+        return answer
+    elif math == "*":
+        answer = operations["*"](first, second)
+        return answer
+    elif math == "/":
+        answer = operations["/"](first, second)
+        return answer
+
+operations = {"+":add, #keys: functions
+              "-":sub,
+              "*":times,
+              "/":divide
+              }
+
+off = False
+print("Welcome!")
+first= float(input("Type a number: "))
+for keys in operations:
+    print(keys)
+math = input("Pick an operation: ")
+if math not in ["+","-","*","/"]:
+    print("Invalid Entry. Start over.")
+else:
+    second= float(input("Type a number: "))
+    answer = compute(first, second, math)
+    print(f"{first} {math} {second} = {answer} ")
+    while not off:
+        if input(f"Type 'y' to continue calculating with {answer}, or type 'n' to start over: ")=='y':
+                for keys in operations:
+                    print(keys)
+                math = input("Pick an operation: ")
+                new_num = float(input("Type a number: "))
+                new_answer = compute(answer, new_num, math)
+                print(f"{answer} {math} {new_num} = {new_answer} ")
+                answer = new_answer
+        else:
+            off = True
+            print("Thank you!")
